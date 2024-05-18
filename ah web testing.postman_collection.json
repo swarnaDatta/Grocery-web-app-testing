@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "63e2e974-9127-441a-b8c3-d2e83eba3622",
+		"name": "ah web testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22743997"
+	},
+	"item": [
+		{
+			"name": "Open home page",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}",
+					"host": [
+						"{{baseurl}}"
+					]
+				},
+				"description": "Open Albert heijn website home page"
+			},
+			"response": []
+		},
+		{
+			"name": "Search for a product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}zoeken?query=Melk",
+					"host": [
+						"{{baseurl}}zoeken"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Melk"
+						}
+					]
+				},
+				"description": "Search for a product in Albert heijn webpage with valid data[melk]"
+			},
+			"response": []
+		},
+		{
+			"name": "User login with email and pass in a Post request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"E-mailadress\":\"swarnadmpi@yahoo.com\"\r\n    \"Wachtwoord\" : \"Regulerpassword7890.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseurl}}login?E-mailadres={{E-mailadres}}&Wachtwoord={{Wachtwoord}}",
+					"host": [
+						"{{baseurl}}login"
+					],
+					"query": [
+						{
+							"key": "E-mailadres",
+							"value": "{{E-mailadres}}"
+						},
+						{
+							"key": "Wachtwoord",
+							"value": "{{Wachtwoord}}"
+						}
+					]
+				},
+				"description": "User will login providing E-mail adress and password in a post request."
+			},
+			"response": []
+		},
+		{
+			"name": "View one product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}producten/product/wi509279/bonduelle-lunchbowl-spelt",
+					"host": [
+						"{{baseurl}}producten"
+					],
+					"path": [
+						"product",
+						"wi509279",
+						"bonduelle-lunchbowl-spelt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View my cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseurl}}mijnlijst",
+					"host": [
+						"{{baseurl}}mijnlijst"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
